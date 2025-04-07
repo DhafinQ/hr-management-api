@@ -4,6 +4,7 @@ import cors from 'cors';
 import db from './app/models/index.js';
 import authRoutes from './app/routes/auth.routes.js';
 import userRoutes from './app/routes/user.routes.js';
+import karyawanRoutes from './app/routes/karyawan.routes.js';
 
 const app = express();
  
@@ -23,6 +24,7 @@ app.get('/', (req, res) => {
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/test', userRoutes);
+app.use("/api/karyawan", karyawanRoutes);
  
 // Set port and listen for requests
 const PORT = process.env.PORT || 8080;
