@@ -4,7 +4,6 @@ import * as karyawanController from "../controllers/karyawan.controller.js";
 
 const router = express.Router();
 
-// 🔐 Only Admin or HRD can manage Karyawan data
 router.post("/", [verifyToken, isHrdOrAdmin], karyawanController.createKaryawan);
 router.get("/", [verifyToken, isHrdOrAdmin], karyawanController.getAllKaryawan);
 router.get("/:id", [verifyToken, isHrdOrAdmin], karyawanController.getKaryawanById);
