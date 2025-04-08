@@ -6,6 +6,7 @@ import authRoutes from './app/routes/auth.routes.js';
 import userRoutes from './app/routes/user.routes.js';
 import karyawanRoutes from './app/routes/karyawan.routes.js';
 import departemenRoutes from './app/routes/departemen.routes.js';
+import jabatanRoutes from './app/routes/jabatan.routes.js';
 
 const app = express();
  
@@ -27,6 +28,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/test', userRoutes);
 app.use("/api/karyawan", karyawanRoutes);
 app.use("/api/departemen", departemenRoutes);
+app.use("/api/jabatan", jabatanRoutes);
  
 // Set port and listen for requests
 const PORT = process.env.PORT || 8080;
