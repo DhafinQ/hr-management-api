@@ -7,6 +7,7 @@ import userRoutes from './app/routes/user.routes.js';
 import karyawanRoutes from './app/routes/karyawan.routes.js';
 import departemenRoutes from './app/routes/departemen.routes.js';
 import jabatanRoutes from './app/routes/jabatan.routes.js';
+import cutiRoutes from './app/routes/cuti.routes.js';
 
 const app = express();
  
@@ -29,6 +30,7 @@ app.use('/api/test', userRoutes);
 app.use("/api/karyawan", karyawanRoutes);
 app.use("/api/departemen", departemenRoutes);
 app.use("/api/jabatan", jabatanRoutes);
+app.use("/api/cuti", cutiRoutes);
  
 // Set port and listen for requests
 const PORT = process.env.PORT || 8080;

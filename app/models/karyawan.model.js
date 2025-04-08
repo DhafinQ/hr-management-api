@@ -5,7 +5,7 @@ export default (sequelize, DataTypes) => {
     NIP: { type: DataTypes.STRING, allowNull: false },
     IDJabatan: { type: DataTypes.INTEGER, allowNull: true },
     IDDepartemen: { type: DataTypes.INTEGER, allowNull: true },
-    TanggalBergabung: { type: DataTypes.DATE, allowNull: false },
+    TanggalBergabung: { type: DataTypes.DATEONLY, allowNull: false },
     StatusKaryawan: { type: DataTypes.ENUM("Aktif", "Resign"), allowNull: false },
     NoHP: { type: DataTypes.STRING },
     Alamat: { type: DataTypes.TEXT },
