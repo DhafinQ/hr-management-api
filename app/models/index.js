@@ -6,6 +6,7 @@ import departemenModel from "./departemen.model.js";
 import jabatanModel from "./jabatan.model.js";
 import cutiModel from "./cuti.model.js";
 import absensiModel from "./absensi.model.js";
+import penggajianModel from "./penggajian.model.js";
 
 const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
   host: dbConfig.HOST,
@@ -24,6 +25,7 @@ db.Departemen = departemenModel(sequelize, Sequelize);
 db.Jabatan = jabatanModel(sequelize, Sequelize);
 db.Cuti = cutiModel(sequelize, Sequelize);
 db.Absensi = absensiModel(sequelize, Sequelize);
+db.Penggajian = penggajianModel(sequelize, Sequelize);
 
 // Define Relationships
 db.User.belongsTo(db.Karyawan, { foreignKey: "IDKaryawan" });
@@ -40,5 +42,8 @@ db.Karyawan.hasMany(db.Cuti, { foreignKey: "IDKaryawan" });
 
 db.Absensi.belongsTo(db.Karyawan, { foreignKey: "IDKaryawan" }); 
 db.Karyawan.hasMany(db.Absensi, { foreignKey: "IDKaryawan" });
+
+db.Absensi.belongsTo(db.Penggajian, { foreignKey: "IDKaryawan" }); 
+db.Penggajian.hasMany(db.Absensi, { foreignKey: "IDKaryawan" });
 
 export default db;

@@ -9,6 +9,6 @@ router.patch("/checkout", [verifyToken], absensiController.checkOutAbsensi);
 router.get("/", [verifyToken, isHrdOrAdmin], absensiController.getAllAbsensiByDate);
 router.get("/karyawan/:id", [verifyToken], absensiController.getAbsensiByKaryawanID); //
 router.get("/:id", [verifyToken], absensiController.getAbsensiById); //
-router.delete("/:id", [verifyToken], absensiController.deleteAbsensi); //
+router.delete("/:id", [verifyToken, isHrdOrAdmin], absensiController.deleteAbsensi); //
 
 export default router;
