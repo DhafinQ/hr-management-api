@@ -5,8 +5,8 @@ This is a **Node.js JWT Authentication API** for managing users and their roles 
 ## 🛠 Setup Instructions
 1. **Clone the repository**:
    ```sh
-   git clone <your-repo-url>
-   cd <your-project-folder>
+   git clone https://github.com/DhafinQ/hr-management-api.git;
+   cd hr-management-api
    ```
 2. **Copy the example `.env` file** and set your authentication secret:
    ```sh
