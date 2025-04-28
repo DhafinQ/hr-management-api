@@ -4,7 +4,7 @@ export const allAccess = (req, res) => {
   };
    
   export const userBoard = (req, res) => {
-    res.status(200).send('User Content.');
+    res.status(200).json({ message: "User Content.", status: "success" });
   };
    
   export const adminBoard = (req, res) => {

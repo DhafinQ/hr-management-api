@@ -51,12 +51,21 @@ export const getAllKaryawan = async (req, res) => {
 export const getKaryawanById = async (req, res) => {
   try {
     const karyawan = await Karyawan.findByPk(req.params.id, {
-        include: [{ model: User }], // Include related User info
+        include: [{ model: User, attributes: ['email'] }], // Include related User info
       });
     if (!karyawan) {
       return res.status(404).json({ message: "Karyawan not found" });
     }
-    res.status(200).json(karyawan);
+
+    // Flatten the structure to include email directly
+    const result = {
+      ...karyawan.toJSON(), // Convert Sequelize instance to plain JSON
+      email: karyawan.User?.email, // Extract email from the User model
+    };
+    delete result.User; // Remove the User object if not needed in the response
+
+
+    res.status(200).json(result);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
