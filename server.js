@@ -37,11 +37,11 @@ app.use("/api/absensi", absensiRoutes);
 app.use("/api/penggajian", penggajianRoutes);
  
 // Set port and listen for requests
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3000;
  
 db.sequelize.sync({ force: false }).then(() => {
   console.log('Database synchronized');
-  app.listen(PORT, () => {
+  app.listen(PORT, "192.168.56.1",() => {
     console.log(`Server is running on port ${PORT}.`);
   });
 });

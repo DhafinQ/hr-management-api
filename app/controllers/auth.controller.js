@@ -75,6 +75,7 @@ export const signin = async (req, res) => {
       res.status(200).json({
         id: user.id,
         email: user.email,
+        karyawanId: user.Karyawan.id,
         namaLengkap: user.Karyawan.NamaLengkap,
         hakAkses: user.Karyawan.HakAkses, // Use HakAkses instead of roles
         accessToken: token,
